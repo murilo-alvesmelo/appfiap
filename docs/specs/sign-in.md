@@ -47,7 +47,7 @@ Ver [animations.md](./animations.md#login): entrada do logo/formulário, shake n
 - `src/features/auth/`: `utils/cpf.ts` (`formatCpf`, `isCpfComplete`, `onlyDigits`), `utils/validation.ts`, `hooks/useSignIn.ts`, `api/auth.repository.ts`, `screens/SignInScreen.tsx`.
 - `src/providers/session/`: estado da sessão + persistência + restauração no boot.
 - `src/navigation/RootNavigator.tsx`: `SignIn` ou área logada conforme `isSignedIn`.
-- Persistência: a lib está **pendente de decisão** (AsyncStorage 🔒, item da Fase 0).
+- Persistência: AsyncStorage via `@/lib/storage` (`src/lib/storage.ts`).
 
 ## Referência do Figma
 Tela de login: node-id a extrair.

@@ -18,6 +18,11 @@ Siga `src/providers/session/SessionProvider.tsx`:
 - `index.ts` exportando Provider, hook e tipos
 - Providers globais são montados em `src/App.tsx`
 
+## Estado persistido
+- Só a sessão (id do responsável) e o aluno selecionado (RM) são persistidos. **Nunca** a senha.
+- Leitura/escrita via `@/lib/storage` (`getItem(key, isValid)`, `setItem`, `removeItem`); as chaves ficam no provider dono do dado.
+- O provider restaura o valor no boot e valida com type guard. Valor inválido ou ausente → estado vazio (ex.: volta ao login).
+
 ## Regras
 - Dados lidos do repository ficam no hook que os carregou. Não copie para Context sem que 2+ features precisem.
 - Estado derivado é calculado no render, não guardado.

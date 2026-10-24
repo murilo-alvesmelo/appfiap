@@ -7,11 +7,11 @@ Toda tela tem animação, deixando o app fluido sem prejudicar a performance.
 "Todas as telas devem conter animações. [...] desenvolver um aplicativo fluido e com efeitos visuais interessantes, que aprimoram a experiência do usuário sem prejudicar a performance."
 
 ## Regras gerais
-1. Animar só `transform` e `opacity` (sem animar layout/cor em loop), com o driver nativo (`useNativeDriver: true`) ou worklets.
+1. Animar só `transform` e `opacity` (sem animar layout/cor em loop), na UI thread (worklets do Reanimated).
 2. Durações curtas: 150 a 350 ms em feedback, até cerca de 500 ms em entradas. Stagger de 40 a 60 ms por item, limitado aos primeiros itens visíveis.
-3. Respeitar "Reduzir movimento" do sistema (`AccessibilityInfo.isReduceMotionEnabled`): nesse caso, trocar por fade simples ou nenhuma animação.
+3. Respeitar "Reduzir movimento" do sistema (`useReducedMotion()` do Reanimated): nesse caso, trocar por fade simples ou nenhuma animação.
 4. Hooks/componentes de animação reutilizáveis ficam em `src/components/ui/` (ex.: `FadeIn`, `useShake`), sem conhecer domínio.
-5. **Lib pendente de decisão:** `Animated` nativo vs. `react-native-reanimated` 🔒 (item aberto da Fase 0). As specs não dependem da escolha.
+5. **Lib:** Reanimated 4 (`react-native-reanimated` + `react-native-worklets`). Padrões em `docs/animations.md`.
 
 ## Por tela
 
