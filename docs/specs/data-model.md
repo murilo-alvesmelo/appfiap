@@ -81,7 +81,7 @@ type Student = {
 };
 
 type DaySchedule = { date: string; lessons: Lesson[] };          // date: ISO "YYYY-MM-DD"
-type Lesson = { startTime: string; endTime: string; subject: string };  // "07:15", "08:00"
+type Lesson = { time: string; subject: string };  // time: "07:15 - 08:00" (como no JSON)
 
 type ReportCard = { year: number; className: string; terms: Term[] };
 type Term = { number: number; isEvaluated: boolean; subjects: SubjectGrade[] };
@@ -93,27 +93,26 @@ A agenda e o boletim **não ficam dentro de `Student`**: são carregados sob dem
 ## Regras de negócio
 1. `id` (number) vira `string`.
 2. `fullName = primeiroNome + " " + sobrenome`, com trim nos dois lados.
-3. `horario "HH:MM - HH:MM"` vira `startTime`/`endTime`. Um horário malformado gera erro no mapper, sem quebrar a lista silenciosamente.
+3. `horario` vira `time` sem transformação: a UI exibe o texto como vem do JSON (ex.: `"07:15 - 08:00"`).
 4. `ano` (string) vira `year` (number).
 5. `nota`/`faltas` `null` significam **não avaliado**. Continuam `null` no domínio (nunca `0`).
 6. `Term.isEvaluated = true` quando **pelo menos uma** disciplina tem `nota` diferente de `null`.
-7. Trimestres ordenados por `number`, agenda ordenada por `date` e aulas por `startTime`.
+7. Trimestres ordenados por `number`, agenda ordenada por `date` e aulas por `time`.
 8. A lista de disciplinas **pode variar entre trimestres**. Exemplo real: no RM 13752, o 1º trimestre de 2025 tem 11 disciplinas (sem "Arte") e o 2º e o 3º têm 12. O mapper não completa nem inventa disciplinas.
 9. `senha` nunca sai do repository de `auth`: a comparação acontece lá dentro e o `Guardian` não carrega senha.
 
 ## Critérios de aceite
-- [ ] **CA1** **Dado** o JSON, **quando** é mapeado, **então** nenhum campo em pt-BR/DTO aparece fora de `src/data/` e dos repositories.
-- [ ] **CA2** `"07:15 - 08:00"` → `{ startTime: "07:15", endTime: "08:00" }`.
-- [ ] **CA3** `nota: null, faltas: null` → `{ grade: null, absences: null }`.
-- [ ] **CA4** Os trimestres 2 e 3 de 2025 têm `isEvaluated: false`, e o 1º, `true`.
-- [ ] **CA5** O boletim de 2024 do RM 12567 tem os 3 trimestres com `isEvaluated: true`.
-- [ ] **CA6** `Guardian` não tem propriedade de senha.
-- [ ] **CA7** Os mappers têm testes unitários em `school.mappers.test.ts`.
+- [x] **CA1** **Dado** o JSON, **quando** é mapeado, **então** nenhum campo em pt-BR/DTO aparece fora de `src/data/` e dos repositories.
+- [x] **CA2** `horario: "07:15 - 08:00"` → `{ time: "07:15 - 08:00" }`.
+- [x] **CA3** `nota: null, faltas: null` → `{ grade: null, absences: null }`.
+- [x] **CA4** Os trimestres 2 e 3 de 2025 têm `isEvaluated: false`, e o 1º, `true`.
+- [x] **CA5** O boletim de 2024 do RM 12567 tem os 3 trimestres com `isEvaluated: true`.
+- [x] **CA6** `Guardian` não tem propriedade de senha.
+- [x] **CA7** Os mappers têm testes unitários em `school.mappers.test.ts`.
 
 ## Cenários de erro / vazio
 - `alunos: []` → `students: []` (o tratamento de UI está em app-header).
 - `agenda: []` / `boletim: []` → lista vazia (o tratamento de UI fica em lessons/report-card).
-- `horario` fora do formato → o mapper lança `Error`. O repository propaga a mensagem em pt-BR.
 
 ## Fatos dos dados atuais (para testes)
 | Responsável | CPF | Senha | Alunos (RM · turma · período) |
