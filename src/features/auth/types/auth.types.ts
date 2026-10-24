@@ -1,7 +1,7 @@
-import type { Session } from "@/providers/session";
+import type { Session } from '@/providers/session';
 
 export type SignInCredentials = {
-  email: string;
+  cpf: string;
   password: string;
 };
 
