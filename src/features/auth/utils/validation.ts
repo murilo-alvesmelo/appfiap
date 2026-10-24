@@ -1,7 +1,5 @@
-import type { SignInCredentials, SignInFieldErrors } from "../types/auth.types";
-
-const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const MIN_PASSWORD_LENGTH = 6;
+import type { SignInCredentials, SignInFieldErrors } from '../types/auth.types';
+import { isCpfComplete } from './cpf';
 
 /**
  * @description Valida as credenciais de login. Retorna um objeto com os erros encontrados.
@@ -13,16 +11,20 @@ export function validateSignIn(
 ): SignInFieldErrors {
   const errors: SignInFieldErrors = {};
 
-  if (!EMAIL_PATTERN.test(credentials.email.trim())) {
-    errors.email = "Informe um e-mail válido";
+  if (!isCpfComplete(credentials.cpf)) {
+    errors.cpf = 'Informe um CPF com 11 dígitos';
   }
-  if (credentials.password.length < MIN_PASSWORD_LENGTH) {
-    errors.password = `A senha deve ter ao menos ${MIN_PASSWORD_LENGTH} caracteres`;
+  if (credentials.password.length === 0) {
+    errors.password = 'Informe a senha';
   }
 
   return errors;
 }
 
+/**
+ * Indica se a validação encontrou algum erro.
+ * @param errors - Resultado de `validateSignIn`.
+ */
 export function hasErrors(errors: SignInFieldErrors): boolean {
   return Object.keys(errors).length > 0;
 }
