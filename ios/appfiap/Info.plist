@@ -6,6 +6,10 @@
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Montserrat-Regular.ttf</string>
+	</array>
 	<key>CFBundleDisplayName</key>
 	<string>appfiap</string>
 	<key>CFBundleExecutable</key>
