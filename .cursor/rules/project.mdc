@@ -1,0 +1,8 @@
+---
+description: Regras do projeto (arquitetura, camadas, convenções)
+alwaysApply: true
+---
+
+Leia e siga integralmente @AGENTS.md antes de qualquer alteração.
+Para tarefas recorrentes, siga as receitas em `.claude/skills/*/SKILL.md`.
+Detalhes de cada tema estão em `docs/`.
