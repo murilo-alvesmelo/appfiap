@@ -74,7 +74,8 @@ Layout simples, só com tokens:
 - Os nomes das cores são **semânticos** (`background`, `text`, `primary`, `onPrimary`), nunca a cor em si (`blue`, `white`)
 
 ## Tema claro/escuro
-- `src/providers/theme/ThemeProvider.tsx` (`AppThemeProvider`) escolhe `lightTheme`/`darkTheme` por `useColorScheme()` e ajusta a `StatusBar`
+- `src/providers/theme/ThemeProvider.tsx` (`AppThemeProvider`) escolhe `lightTheme`/`darkTheme` via `useIsDarkTheme()` e ajusta a `StatusBar`
+- O tema padrão é **dark**. Para mudar (`dark` | `light` | `system`), edite `COLOR_SCHEME_PREFERENCE` em `src/providers/theme/useIsDarkTheme.ts`. O `App.tsx` usa o mesmo hook para o tema do React Navigation
 - `src/App.tsx` deriva o tema do React Navigation das mesmas cores (fundo, card, borda)
 - Escolha manual de tema (se for implementada) mora no `AppThemeProvider`, nunca em components
 
