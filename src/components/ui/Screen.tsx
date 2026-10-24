@@ -10,17 +10,20 @@ export type ScreenProps = {
   children: ReactNode;
   scroll?: boolean;
   edges?: Edge[];
+  padded?: boolean;
 };
 
 /**
  * Container raiz de toda tela: fundo do tema, safe area e padding.
  * @param scroll - Envolve o conteúdo em `ScrollView`.
  * @param edges - Bordas que recebem o inset da safe area. Padrão: topo e base.
+ * @param padded - Aplica padding e gap `md` no conteúdo. Padrão: `true`.
  */
 export function Screen({
   children,
   scroll = false,
   edges = ["top", "bottom"],
+  padded = true,
 }: ScreenProps) {
   const theme = useAppTheme();
   const insets = useSafeAreaInsets();
@@ -41,14 +44,18 @@ export function Screen({
         <ScrollView
           contentContainerStyle={[
             styles.scrollContent,
-            { padding: theme.spacing.md, gap: theme.spacing.md },
+            padded && { padding: theme.spacing.md, gap: theme.spacing.md },
           ]}
           keyboardShouldPersistTaps="handled"
         >
           {children}
         </ScrollView>
       ) : (
-        <Box flexGrow={1} padding="md" gap="md">
+        <Box
+          flexGrow={1}
+          padding={padded ? "md" : undefined}
+          gap={padded ? "md" : undefined}
+        >
           {children}
         </Box>
       )}
