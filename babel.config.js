@@ -9,5 +9,7 @@ module.exports = {
         alias: { '@': './src' },
       },
     ],
+    // Precisa ser o último plugin (Reanimated 4).
+    'react-native-worklets/plugin',
   ],
 };
