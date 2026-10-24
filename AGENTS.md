@@ -3,6 +3,7 @@
 Regras do projeto para qualquer agente de IA (Claude Code, Cursor, Copilot, Codex…) e para devs.
 **Siga estas regras sempre.** Para detalhes, leia o doc correspondente em `docs/` antes de implementar.
 Requisitos do produto: `teste-tecnico-mobile.md`.
+**Antes de implementar um fluxo, leia a spec dele em `docs/specs/`** (critérios de aceite = definição de pronto).
 
 ## Stack (fechada)
 
@@ -23,6 +24,7 @@ index.js          # registra `App` de src/App.tsx
 src/
   App.tsx         # providers globais + NavigationContainer
   navigation/     # navigators (RootNavigator, AppTabs) + param lists tipadas
+  data/           # responsaveis.json + DTOs, tipos de domínio e mappers compartilhados (ver docs/specs/data-model.md)
   features/<x>/   # Um módulo por domínio (auth, ...)
     api/          #   <x>.repository.ts: lê a fonte de dados (JSON) e mapeia DTO -> tipo de domínio
     hooks/        #   useXxx.ts: chama o repository + regras + loading/erro (camada de negócio)
@@ -47,7 +49,7 @@ navigation/ → features/<x>/index.ts → screens → components + hooks → api
 ```
 
 1. **Screens e components nunca acessam a fonte de dados.** Dados vêm de hooks da feature.
-2. **Só repositories (`features/<x>/api/`) importam os arquivos de dados (JSON).**
+2. **Só repositories (`features/<x>/api/`) importam os arquivos de dados (JSON), os DTOs e os mappers de `src/data/`.** Os tipos de domínio (`@/data/school.types`) podem ser importados por qualquer camada.
 3. **DTOs (formato do JSON) não saem do repository.** Converta sempre para tipos de domínio (camelCase).
 4. **Uma feature não importa o interior de outra.** Use apenas `@/features/<outra>` (o `index.ts`).
 5. `components/ui`, `providers`, `lib`, `utils`, `constants` **nunca importam de `features/`**.
@@ -93,6 +95,7 @@ Para tarefas recorrentes, siga a receita em `.claude/skills/<nome>/SKILL.md`:
 
 ## Documentação
 
+- `docs/specs/`: uma spec por fluxo (SDD), com regras e critérios de aceite
 - `docs/architecture.md`: camadas e fluxo de dados
 - `docs/folder-structure.md`: o que entra e o que não entra em cada pasta
 - `docs/data-fetching.md`: JSON → repository → hook → screen, erros e loading
@@ -103,6 +106,7 @@ Para tarefas recorrentes, siga a receita em `.claude/skills/<nome>/SKILL.md`:
 
 ## Antes de concluir qualquer tarefa
 
+- [ ] Critérios de aceite da spec (`docs/specs/`) atendidos e marcados
 - [ ] `yarn typecheck` passa sem erros
 - [ ] `yarn lint` e `yarn test` passam
 - [ ] Nenhuma regra de dependência violada (imports conferidos)

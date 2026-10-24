@@ -31,6 +31,7 @@ Crie apenas as subpastas que a feature usa.
 | `providers/` | Providers globais (Context + hook, ex.: `session/`, `theme/`) usados por 2+ features, montados em `src/App.tsx` | estado de uma feature só |
 | `lib/` | Infra e helpers genéricos (`logger`) | domínio |
 | `utils/` | Funções puras genéricas (datas, strings) | domínio, React |
+| `data/` | `responsaveis.json`, `school.dto.ts` (DTOs), `school.types.ts` (domínio), `school.mappers.ts` (+ testes). Ver `docs/specs/data-model.md` | React, I/O além do JSON. JSON, DTOs e mappers só são importados por repositories; `school.types.ts` por qualquer camada |
 | `constants/` | `theme.ts` (tema Restyle light/dark, tipos de token, `useAppTheme`), constantes globais | lógica |
 
 ## Regra de ouro
