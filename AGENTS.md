@@ -6,7 +6,7 @@ Requisitos do produto: `teste-tecnico-mobile.md`.
 
 ## Stack (fechada)
 
-- **React Native CLI 0.88** + TypeScript (strict). Sem Expo
+- **React Native CLI 0.88** + TypeScript (strict).
 - Navegação: **React Navigation** (native-stack + bottom-tabs), em `src/navigation/`. Ver `docs/navigation.md`
 - Estilo: **Restyle** (`@shopify/restyle`): `Box`/`AppText` com props de tokens e `useAppTheme()`; temas light/dark em `src/constants/theme.ts`. Ver `docs/styling.md`
 - Dados: **JSON local** lido pelos repositories das features (sem HTTP). Ver `docs/data-fetching.md`
