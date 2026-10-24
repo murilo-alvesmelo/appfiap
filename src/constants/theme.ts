@@ -1,11 +1,4 @@
-import { createTheme, useTheme } from "@shopify/restyle";
-
-/**
- * Design tokens. Every color, spacing, radius and font size used in the app
- * must come from here — never hardcode values in components.
- * Components read these through Restyle props (`Box`, `Text`) or `useAppTheme()`.
- * O tema ativo é escolhido em `src/providers/theme`.
- */
+import { createTheme, useTheme } from '@shopify/restyle';
 
 const spacing = {
   xs: 4,
@@ -23,7 +16,6 @@ const borderRadii = {
   full: 9999,
 } as const;
 
-/** Breakpoints de largura de tela. O primeiro precisa começar em 0. */
 const breakpoints = {
   xs: 0,
   sm: 576,
@@ -32,34 +24,49 @@ const breakpoints = {
   xl: 1200,
 } as const;
 
-const textVariants = {
-  defaults: {
-    fontSize: 16,
-    lineHeight: 22,
-    fontWeight: "400",
-    color: "text",
-    includeFontPadding: false,
-  },
-  title: { fontSize: 28, lineHeight: 34, fontWeight: "700" },
-  subtitle: { fontSize: 20, lineHeight: 26, fontWeight: "600" },
-  body: { fontSize: 16, lineHeight: 22, fontWeight: "400" },
-  caption: { fontSize: 13, lineHeight: 18, fontWeight: "400" },
-  label: { fontSize: 14, lineHeight: 20, fontWeight: "600" },
+/**
+ * Famílias da Montserrat (fonte do Figma). Só o peso Regular está no projeto;
+ * ao adicionar `Montserrat-Medium.ttf`/`Montserrat-Bold.ttf`, troque aqui.
+ */
+export const fonts = {
+  regular: 'Montserrat-Regular',
+  medium: 'Montserrat-Regular',
 } as const;
 
-/** Tema claro. Define o shape que todos os temas devem seguir. */
+const textVariants = {
+  defaults: {
+    fontFamily: fonts.regular,
+    fontSize: 16,
+    lineHeight: 22,
+    fontWeight: '400',
+    color: 'text',
+    includeFontPadding: false,
+  },
+  title: { fontSize: 28, lineHeight: 34, fontWeight: '700' },
+  subtitle: { fontSize: 20, lineHeight: 26, fontWeight: '600' },
+  body: { fontSize: 16, lineHeight: 22, fontWeight: '400' },
+  caption: { fontSize: 13, lineHeight: 18, fontWeight: '400' },
+  label: { fontSize: 14, lineHeight: 20, fontWeight: '600' },
+  display: { fontFamily: fonts.regular, fontSize: 32, lineHeight: 39 },
+  bodyLarge: { fontFamily: fonts.regular, fontSize: 20, lineHeight: 24 },
+  bodyStrong: { fontFamily: fonts.medium, fontSize: 16, lineHeight: 20 },
+  button: { fontFamily: fonts.medium, fontSize: 20, lineHeight: 24 },
+} as const;
+
 export const lightTheme = createTheme({
   colors: {
-    primary: "#2563EB",
-    primaryPressed: "#1D4ED8",
-    onPrimary: "#FFFFFF",
-    background: "#FFFFFF",
-    surface: "#F4F4F5",
-    border: "#E4E4E7",
-    text: "#18181B",
-    textMuted: "#71717A",
-    danger: "#DC2626",
-    success: "#16A34A",
+    primary: '#0BA892',
+    primaryPressed: '#08897A',
+    onPrimary: '#FFFFFF',
+    onPrimaryDisabled: '#B3E9E0',
+    background: '#FFFFFF',
+    surface: '#F2F2F2',
+    surfaceRaised: '#E0E0E0',
+    border: '#000000',
+    text: '#000000',
+    textMuted: '#6B6B6B',
+    danger: '#0BA892',
+    success: '#0BA892',
   },
   spacing,
   borderRadii,
@@ -69,25 +76,29 @@ export const lightTheme = createTheme({
 
 export type AppTheme = typeof lightTheme;
 
-/** Tema escuro. Mesmo shape do `lightTheme`; só as cores mudam. */
 export const darkTheme: AppTheme = {
   ...lightTheme,
   colors: {
-    primary: "#3B82F6",
-    primaryPressed: "#2563EB",
-    onPrimary: "#FFFFFF",
-    background: "#09090B",
-    surface: "#18181B",
-    border: "#27272A",
-    text: "#FAFAFA",
-    textMuted: "#A1A1AA",
-    danger: "#F87171",
-    success: "#4ADE80",
+    primary: '#29F4D5',
+    primaryPressed: '#1FC9AF',
+    onPrimary: '#000000',
+    onPrimaryDisabled: '#777777',
+    background: '#000000',
+    surface: '#262626',
+    surfaceRaised: '#4D4D4D',
+    border: '#FFFFFF',
+    text: '#FFFFFF',
+    textMuted: '#777777',
+    danger: '#29F4D5',
+    success: '#29F4D5',
   },
 };
 
-export type ColorToken = keyof AppTheme["colors"];
-export type TypographyVariant = Exclude<keyof AppTheme["textVariants"], "defaults">;
+export type ColorToken = keyof AppTheme['colors'];
+export type TypographyVariant = Exclude<
+  keyof AppTheme['textVariants'],
+  'defaults'
+>;
 
 /** Tema ativo tipado. Use quando um valor do tema não puder ir via props do Restyle. */
 export const useAppTheme = () => useTheme<AppTheme>();

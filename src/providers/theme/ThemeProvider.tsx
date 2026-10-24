@@ -1,15 +1,17 @@
 import { ThemeProvider } from "@shopify/restyle";
 import type { ReactNode } from "react";
-import { StatusBar, useColorScheme } from "react-native";
+import { StatusBar } from "react-native";
 
 import { darkTheme, lightTheme } from "@/constants/theme";
 
+import { useIsDarkTheme } from "./useIsDarkTheme";
+
 /**
- * @description - Provider do tema Restyle. Segue o esquema de cores do sistema
- * (claro/escuro) e ajusta a status bar. Montado em `src/App.tsx`.
+ * @description - Provider do tema Restyle. Escolhe claro/escuro via `useIsDarkTheme`
+ * (padrão: escuro) e ajusta a status bar. Montado em `src/App.tsx`.
  */
 export function AppThemeProvider({ children }: { children: ReactNode }) {
-  const isDark = useColorScheme() === "dark";
+  const isDark = useIsDarkTheme();
 
   return (
     <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
