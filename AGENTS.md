@@ -54,7 +54,7 @@ navigation/ → features/<x>/index.ts → screens → components + hooks → api
 2. **Só repositories (`features/<x>/api/`) importam os arquivos de dados (JSON), os DTOs e os mappers de `src/data/`.** Os tipos de domínio (`@/data/school.types`) podem ser importados por qualquer camada.
 3. **DTOs (formato do JSON) não saem do repository.** Converta sempre para tipos de domínio (camelCase).
 4. **Uma feature não importa o interior de outra.** Use apenas `@/features/<outra>` (o `index.ts`).
-5. `components/ui`, `providers`, `lib`, `utils`, `constants` **nunca importam de `features/`**.
+5. `components/ui`, `components/layout`, `providers`, `lib`, `utils`, `constants` **nunca importam de `features/`**.
 6. `utils/` e `types/` não importam React nem React Native.
 7. `navigation/` só monta navigators e registra screens: sem regra de negócio nem estilo de tela.
 8. Estado global só em `src/providers/` e só quando 2+ features precisam. Prefira estado local.
@@ -80,7 +80,7 @@ navigation/ → features/<x>/index.ts → screens → components + hooks → api
 
 ## Feature de referência
 
-Use `src/features/auth/` (formulário + ação assíncrona) e `src/features/home/` (tela simples) como **modelo**.
+Use `src/features/auth/` (formulário + ação assíncrona) e `src/features/lessons/` (tela simples) como **modelo**.
 Para leitura de dados, siga o exemplo de `docs/data-fetching.md`.
 Ao criar código novo, copie o formato desses arquivos.
 
