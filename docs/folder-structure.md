@@ -27,6 +27,7 @@ Crie apenas as subpastas que a feature usa.
 | Pasta | Entra | Não entra |
 |---|---|---|
 | `components/ui/` | Primitivos genéricos (`Box`, `AppText`, `Button`, `Input`, `Screen`, `StateView`) com barrel `index.ts` | qualquer coisa que conheça domínio |
+| `components/layout/` | Peças do shell autenticado usadas pela navegação (`AuthenticatedHeader` + `AppHeader`). Podem ler `providers/` e usar tipos de `@/data/school.types` | importar `features/`, acessar dados/repositories |
 | `components/forms/` | Composições de formulário reutilizadas por 2+ features | formulários de uma feature só |
 | `providers/` | Providers globais (Context + hook, ex.: `session/`, `theme/`) usados por 2+ features, montados em `src/App.tsx` | estado de uma feature só |
 | `lib/` | Infra e helpers genéricos (`logger`) | domínio |

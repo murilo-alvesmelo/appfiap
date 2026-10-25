@@ -22,7 +22,7 @@ Autenticar o responsável com CPF e senha do JSON e manter a sessão entre abert
 
 ## Critérios de aceite
 - [x] **CA1** **Dado** CPF `969.294.560-04` e senha `123456`, **quando** toco em entrar, **então** vou para **Aulas**.
-- [ ] **CA2** **Dado** CPF `508.795.670-07` e senha `987654`, **quando** entro, **então** vou para **Aulas** com a aluna Bianca selecionada. _(Login ok; seleção do aluno na Fase 3.)_
+- [x] **CA2** **Dado** CPF `508.795.670-07` e senha `987654`, **quando** entro, **então** vou para **Aulas** com a aluna Bianca selecionada.
 - [x] **CA3** **Dado** que digito `96929456004`, **então** o campo exibe `969.294.560-04`, o teclado é numérico e dígitos além de 11 são descartados.
 - [x] **CA4** **Dado** um CPF incompleto, um CPF inexistente ou uma senha errada, **quando** entro, **então** vejo a mensagem única de erro e continuo no login.
 - [x] **CA5** A tela não tem links de cadastro nem de recuperação de senha.
