@@ -1,14 +1,14 @@
-import { useState } from "react";
+import { useRef, useState } from 'react';
 
-import { logger } from "@/lib/logger";
-import { useSession } from "@/providers/session";
+import { logger } from '@/lib/logger';
+import { useSession } from '@/providers/session';
 
-import { authRepository } from "../api/auth.repository";
-import type { SignInCredentials, SignInFieldErrors } from "../types/auth.types";
-import { hasErrors, validateSignIn } from "../utils/validation";
+import { authRepository } from '../api/auth.repository';
+import type { SignInCredentials, SignInFieldErrors } from '../types/auth.types';
+import { hasErrors, validateSignIn } from '../utils/validation';
 
 const INVALID_CREDENTIALS_MESSAGE =
-  "Usuário ou senha inválida.\nPode tentar novamente?";
+  'Usuário ou senha inválida.\nPode tentar novamente?';
 
 /**
  * @description - Orquestra o login: valida as credenciais, chama o repository e salva a sessão.
@@ -21,8 +21,11 @@ export function useSignIn() {
   const [fieldErrors, setFieldErrors] = useState<SignInFieldErrors>({});
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string>();
+  const isSubmittingRef = useRef(false);
 
   async function submit(credentials: SignInCredentials): Promise<void> {
+    if (isSubmittingRef.current) return;
+
     const errors = validateSignIn(credentials);
     setFieldErrors(errors);
     if (hasErrors(errors)) {
@@ -30,6 +33,7 @@ export function useSignIn() {
       return;
     }
 
+    isSubmittingRef.current = true;
     setIsLoading(true);
     setErrorMessage(undefined);
     try {
@@ -38,6 +42,7 @@ export function useSignIn() {
       logger.error(error);
       setErrorMessage(INVALID_CREDENTIALS_MESSAGE);
     } finally {
+      isSubmittingRef.current = false;
       setIsLoading(false);
     }
   }

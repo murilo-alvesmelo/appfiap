@@ -1,10 +1,5 @@
-export type SessionUser = {
-  id: string;
-  name: string;
-  email: string;
-};
+import type { Guardian } from '@/data/school.types';
 
 export type Session = {
-  token: string;
-  user: SessionUser;
+  guardian: Guardian;
 };

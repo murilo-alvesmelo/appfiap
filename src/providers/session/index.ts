@@ -1,2 +1,2 @@
-export { SessionProvider, useSession } from "./SessionProvider";
-export type { Session, SessionUser } from "./session.types";
+export { SessionProvider, useSession } from './SessionProvider';
+export type { Session } from './session.types';
