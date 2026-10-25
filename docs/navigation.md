@@ -27,7 +27,7 @@ src/App.tsx            # NavigationContainer (tema derivado do Restyle) + RootNa
 - Parâmetros: tipar a screen com `NativeStackScreenProps<RootStackParamList, "Xxx">` (ou `useRoute`) **na screen** e passar ao hook
 
 ## Autenticação
-`RootNavigator` renderiza `SignIn` **ou** `AppTabs` conforme `isSignedIn` de `useSession()`.
+`RootNavigator` renderiza `SignIn` **ou** `AppTabs` conforme `isSignedIn` de `useSession()`. Enquanto a sessão salva é restaurada (`isRestoring`), mostra `<StateView state="loading" />` para não piscar o login.
 Ao chamar `signIn`/`signOut`, o React Navigation troca a tela sozinho. **Não** chame `navigate`/`reset` após login/logout.
 
 ## Nova tab (rodapé)

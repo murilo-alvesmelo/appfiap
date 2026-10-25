@@ -22,6 +22,7 @@ Siga `src/providers/session/SessionProvider.tsx`:
 - Só a sessão (id do responsável) e o aluno selecionado (RM) são persistidos. **Nunca** a senha.
 - Leitura/escrita via `@/lib/storage` (`getItem(key, isValid)`, `setItem`, `removeItem`); as chaves ficam no provider dono do dado.
 - O provider restaura o valor no boot e valida com type guard. Valor inválido ou ausente → estado vazio (ex.: volta ao login).
+- Como `providers/` não importa `features/`, o `SessionProvider` recebe `resolveGuardian(id)` por prop; o `App.tsx` injeta `restoreGuardian` de `@/features/auth`. Enquanto restaura, expõe `isRestoring`.
 
 ## Regras
 - Dados lidos do repository ficam no hook que os carregou. Não copie para Context sem que 2+ features precisem.
