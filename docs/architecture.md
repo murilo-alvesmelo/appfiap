@@ -25,4 +25,4 @@ src/navigation/*Navigator.tsx
 
 Os providers globais (`theme`, `session`) e o `NavigationContainer` são montados em `src/App.tsx`.
 
-Módulos compartilhados (`components/ui`, `providers`, `lib`, `utils`, `constants`) **não conhecem features**.
+Módulos compartilhados (`components/ui`, `components/layout`, `providers`, `lib`, `utils`, `constants`) **não conhecem features**.

@@ -6,7 +6,7 @@ description: Cria uma nova feature completa em src/features/<nome> (tipos/mapper
 # Criar feature
 
 Leia antes: a spec do fluxo em `docs/specs/`, `AGENTS.md`, `docs/architecture.md`, `docs/data-fetching.md`, `docs/specs/data-model.md`, `docs/navigation.md`.
-Modelos a copiar: `src/features/auth/` (formulário/ação), `src/features/home/` (tela simples) e o exemplo de leitura em `docs/data-fetching.md`.
+Modelos a copiar: `src/features/auth/` (formulário/ação), `src/features/lessons/` (tela simples) e o exemplo de leitura em `docs/data-fetching.md`.
 
 ## Entradas a confirmar
 
