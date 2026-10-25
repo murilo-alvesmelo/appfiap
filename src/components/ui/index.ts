@@ -1,6 +1,7 @@
 export { AppText, type AppTextProps } from './AppText';
 export { Button, type ButtonProps } from './Button';
 export { Dropdown, type DropdownItem, type DropdownProps } from './Dropdown';
+export { ExpandChevron, type ExpandChevronProps } from './ExpandChevron';
 export { Input, type InputProps } from './Input';
 export { Logo, type LogoProps } from './Logo';
 export { Screen, type ScreenProps } from './Screen';
