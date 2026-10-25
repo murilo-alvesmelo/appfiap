@@ -2,6 +2,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { StateView } from '@/components/ui';
 import { SignInScreen } from '@/features/auth';
+import { StudentPickerScreen } from '@/features/students';
 import { useSession } from '@/providers/session';
 
 import { AppTabs } from './AppTabs';
@@ -22,7 +23,14 @@ export function RootNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       {isSignedIn ? (
-        <Stack.Screen name="AppTabs" component={AppTabs} />
+        <>
+          <Stack.Screen name="AppTabs" component={AppTabs} />
+          <Stack.Screen
+            name="StudentPicker"
+            component={StudentPickerScreen}
+            options={{ presentation: 'modal' }}
+          />
+        </>
       ) : (
         <Stack.Screen name="SignIn" component={SignInScreen} />
       )}
