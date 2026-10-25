@@ -3,13 +3,14 @@ import {
   DefaultTheme,
   NavigationContainer,
   type Theme,
-} from "@react-navigation/native";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+} from '@react-navigation/native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { darkTheme, lightTheme } from "@/constants/theme";
-import { RootNavigator } from "@/navigation";
-import { SessionProvider } from "@/providers/session";
-import { AppThemeProvider, useIsDarkTheme } from "@/providers/theme";
+import { darkTheme, lightTheme } from '@/constants/theme';
+import { restoreGuardian } from '@/features/auth';
+import { RootNavigator } from '@/navigation';
+import { SessionProvider } from '@/providers/session';
+import { AppThemeProvider, useIsDarkTheme } from '@/providers/theme';
 
 /**
  * @description - Raiz do app: providers globais + navegação.
@@ -18,7 +19,7 @@ export function App() {
   return (
     <SafeAreaProvider>
       <AppThemeProvider>
-        <SessionProvider>
+        <SessionProvider resolveGuardian={restoreGuardian}>
           <NavigationContainer theme={useNavigationTheme()}>
             <RootNavigator />
           </NavigationContainer>
