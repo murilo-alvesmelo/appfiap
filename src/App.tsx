@@ -9,6 +9,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { darkTheme, lightTheme } from '@/constants/theme';
 import { restoreGuardian } from '@/features/auth';
 import { RootNavigator } from '@/navigation';
+import { SelectedStudentProvider } from '@/providers/selected-student';
 import { SessionProvider } from '@/providers/session';
 import { AppThemeProvider, useIsDarkTheme } from '@/providers/theme';
 
@@ -20,9 +21,11 @@ export function App() {
     <SafeAreaProvider>
       <AppThemeProvider>
         <SessionProvider resolveGuardian={restoreGuardian}>
-          <NavigationContainer theme={useNavigationTheme()}>
-            <RootNavigator />
-          </NavigationContainer>
+          <SelectedStudentProvider>
+            <NavigationContainer theme={useNavigationTheme()}>
+              <RootNavigator />
+            </NavigationContainer>
+          </SelectedStudentProvider>
         </SessionProvider>
       </AppThemeProvider>
     </SafeAreaProvider>
