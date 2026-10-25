@@ -1,16 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Pressable, StyleSheet } from 'react-native';
-import Animated, {
-  Easing,
-  useAnimatedStyle,
-  useReducedMotion,
-  useSharedValue,
-  withTiming,
-} from 'react-native-reanimated';
 
 import { AppText } from './AppText';
+import { ExpandChevron } from './ExpandChevron';
 import { Box } from './primitives';
-import { ChevronIcon } from '../svg/ChevronIcon';
 
 export type DropdownItem<T extends string | number> = {
   value: T;
@@ -63,7 +56,7 @@ export function Dropdown<T extends string | number>({
           style={styles.trigger}
         >
           <AppText>{selectedLabel}</AppText>
-          <Chevron isOpen={isOpen} />
+          <ExpandChevron isExpanded={isOpen} />
         </Box>
       </Pressable>
 
@@ -98,34 +91,6 @@ export function Dropdown<T extends string | number>({
         </Box>
       )}
     </Box>
-  );
-}
-
-const CHEVRON_DURATION = 250;
-
-/**
- * Chevron fino em `primary`: aponta para baixo fechado e gira suavemente
- * para cima ao abrir. Com "Reduzir movimento", troca sem animação.
- */
-function Chevron({ isOpen }: { isOpen: boolean }) {
-  const reduceMotion = useReducedMotion();
-  const rotation = useSharedValue(isOpen ? 180 : 0);
-
-  useEffect(() => {
-    rotation.value = withTiming(isOpen ? 180 : 0, {
-      duration: reduceMotion ? 0 : CHEVRON_DURATION,
-      easing: Easing.out(Easing.cubic),
-    });
-  }, [isOpen, reduceMotion, rotation]);
-
-  const animatedStyle = useAnimatedStyle(() => ({
-    transform: [{ rotate: `${rotation.value}deg` }],
-  }));
-
-  return (
-    <Animated.View style={animatedStyle}>
-      <ChevronIcon />
-    </Animated.View>
   );
 }
 
