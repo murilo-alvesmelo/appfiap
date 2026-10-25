@@ -18,12 +18,12 @@ Permitir que o responsável com mais de um aluno escolha qual deles acompanhar.
 6. O acesso à tela só existe quando `students.length > 1` (botão no header). Se a rota for aberta com um aluno só, ela volta imediatamente.
 
 ## Critérios de aceite
-- [ ] **CA1** **Dado** Adelaide (1 aluna), **então** não há caminho na UI para esta tela.
-- [ ] **CA2** **Dado** Gustavo, **quando** abro a seleção, **então** vejo "Rafael da Silva · RM 12567 · 7EF" e "Joana da Silva · RM 12568 · 2EM".
-- [ ] **CA3** O aluno atual aparece destacado.
-- [ ] **CA4** **Dado** que estou em Boletim, **quando** seleciono Joana, **então** volto para Boletim já com os dados de Joana.
-- [ ] **CA5** A tela não aparece como tab no rodapé.
-- [ ] **CA6** Fechar o modal sem selecionar mantém o aluno atual.
+- [x] **CA1** **Dado** Adelaide (1 aluna), **então** não há caminho na UI para esta tela.
+- [x] **CA2** **Dado** Gustavo, **quando** abro a seleção, **então** vejo "Rafael da Silva · RM 12567 · 7EF" e "Joana da Silva · RM 12568 · 2EM".
+- [x] **CA3** O aluno atual aparece destacado.
+- [x] **CA4** **Dado** que estou em Boletim, **quando** seleciono Joana, **então** volto para Boletim já com os dados de Joana.
+- [x] **CA5** A tela não aparece como tab no rodapé.
+- [x] **CA6** Fechar o modal sem selecionar mantém o aluno atual.
 
 ## Cenários de erro / vazio
 - Lista vazia (responsável sem alunos): a tela não é acessível (ver app-header). Se for aberta assim mesmo, mostra `StateView` vazio.
@@ -37,5 +37,3 @@ Ver [animations.md](./animations.md#seleção-de-aluno): entrada da lista e feed
 ## Arquivos / camadas envolvidos
 `src/features/students/` (`components/` com o item de aluno, `screens/StudentPickerScreen.tsx`, e hook se houver regra), o provider de aluno selecionado, `src/navigation/RootNavigator.tsx` e `navigation.types.ts`.
 
-## Referência do Figma
-Tela de seleção: node-id a extrair.
