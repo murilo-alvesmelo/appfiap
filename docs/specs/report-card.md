@@ -20,16 +20,16 @@ Mostrar o boletim anual do aluno selecionado: trimestres, disciplinas, notas e f
 9. Ao trocar de aluno, o boletim recarrega no ano inicial.
 
 ## Critérios de aceite
-- [ ] **CA1** **Dado** Rafael, **quando** abro Boletim, **então** vejo "2025" e a turma "7EF".
-- [ ] **CA2** O 1º trimestre lista as 12 disciplinas com nota e faltas (ex.: Língua Portuguesa · 9,5 · 0 faltas).
-- [ ] **CA3** Notas e faltas aparecem por disciplina, em cada trimestre avaliado.
-- [ ] **CA4** O 2º e o 3º trimestres de 2025 aparecem como "Não avaliado".
-- [ ] **CA5** **Dado** Bianca (RM 13752), **então** o 1º trimestre mostra 11 disciplinas, sem crash nem linha vazia.
-- [ ] **CA6** ⭐ **Dado** Rafael, **quando** escolho 2024, **então** vejo a turma "6EF" e os 3 trimestres avaliados.
-- [ ] **CA7** ⭐ **Dado** Joana ou Bianca (só 2025), **então** o seletor de ano não aparece.
-- [ ] **CA8** **Quando** troco de aluno, **então** o boletim passa a ser o do novo aluno, em 2025.
-- [ ] **CA9** Loading e erro via `StateView`.
-- [ ] **CA10** O mapeamento, `isEvaluated`, a formatação de nota e a escolha do ano inicial têm testes.
+- [x] **CA1** **Dado** Rafael, **quando** abro Boletim, **então** vejo "2025" e a turma "7EF".
+- [x] **CA2** O 1º trimestre lista as 12 disciplinas com nota e faltas (ex.: Língua Portuguesa · 9,5 · 0 faltas).
+- [x] **CA3** Notas e faltas aparecem por disciplina, em cada trimestre avaliado.
+- [x] **CA4** O 2º e o 3º trimestres de 2025 aparecem como "Não avaliado".
+- [x] **CA5** **Dado** Bianca (RM 13752), **então** o 1º trimestre mostra 11 disciplinas, sem crash nem linha vazia.
+- [x] **CA6** ⭐ **Dado** Rafael, **quando** escolho 2024, **então** vejo a turma "6EF" e os 3 trimestres avaliados.
+- [x] **CA7** ⭐ **Dado** Joana ou Bianca (só 2025), **então** o seletor de ano não aparece.
+- [x] **CA8** **Quando** troco de aluno, **então** o boletim passa a ser o do novo aluno, em 2025.
+- [x] **CA9** Loading e erro via `StateView`.
+- [x] **CA10** O mapeamento, `isEvaluated`, a formatação de nota e a escolha do ano inicial têm testes.
 
 ## Cenários de erro / vazio
 - **Aluno sem boletim** (`boletim: []`): `StateView` vazio "Boletim indisponível para este aluno".
@@ -44,5 +44,3 @@ Ver [animations.md](./animations.md#boletim): troca de ano/trimestre e entrada d
 ## Arquivos / camadas envolvidos
 `src/features/report-card/` (`api/report-card.repository.ts`, `hooks/useReportCard.ts`, `utils/` com formatação e ano inicial, `components/` com o trimestre, a linha de disciplina e o seletor de ano, `screens/ReportCardScreen.tsx`), e o provider de aluno selecionado.
 
-## Referência do Figma
-Tela de boletim: node-id a extrair.
