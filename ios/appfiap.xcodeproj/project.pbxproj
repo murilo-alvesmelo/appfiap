@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		0C80B921A6F3F58F76C31292 /* libPods-appfiap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-appfiap.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		1A3CC77CE47140A2B7D24736 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDB349A1B0DE496187C5FA55 /* Colors.xcassets */; };
+		6A73449138F8427696DC42EF /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F58896454BBF42EA9C997198 /* BootSplash.storyboard */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		761780EF2CA45674006654EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EE2CA45674006654EF /* SceneDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A1F0C0DE00000000000F0002 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1F0C0DE00000000000F0001 /* Montserrat-Regular.ttf */; };
 		A1F0C0DE00000000000F0004 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1F0C0DE00000000000F0003 /* Montserrat-Bold.ttf */; };
 		BF58B706A0840EF6A31AF718 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
-		6A73449138F8427696DC42EF /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F58896454BBF42EA9C997198 /* BootSplash.storyboard */; };
-		1A3CC77CE47140A2B7D24736 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDB349A1B0DE496187C5FA55 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,9 +32,9 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = appfiap/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1F0C0DE00000000000F0001 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../src/assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		A1F0C0DE00000000000F0003 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "../src/assets/fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		CDB349A1B0DE496187C5FA55 /* Colors.xcassets */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = appfiap/Colors.xcassets; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F58896454BBF42EA9C997198 /* BootSplash.storyboard */ = {isa = PBXFileReference; name = "BootSplash.storyboard"; path = "appfiap/BootSplash.storyboard"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		CDB349A1B0DE496187C5FA55 /* Colors.xcassets */ = {isa = PBXFileReference; name = "Colors.xcassets"; path = "appfiap/Colors.xcassets"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = folder.assetcatalog; explicitFileType = undefined; includeInIndex = 0; };
+		F58896454BBF42EA9C997198 /* BootSplash.storyboard */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = BootSplash.storyboard; path = appfiap/BootSplash.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
