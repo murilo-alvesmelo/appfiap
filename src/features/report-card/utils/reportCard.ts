@@ -1,16 +1,14 @@
 import type { ReportCard } from '@/data/school.types';
 
-export const DEFAULT_YEAR = 2025;
-
 /**
  * @description Define o ano inicial do boletim: o ano preferido, se existir; senão o mais recente.
  * @param reportCards - Boletins do aluno.
- * @param preferredYear - Ano preferido. Padrão: `DEFAULT_YEAR`.
+ * @param preferredYear - Ano preferido. Padrão: o ano corrente (data do dispositivo).
  * @returns O ano inicial, ou `undefined` se não houver boletim.
  */
 export function getInitialYear(
   reportCards: ReportCard[],
-  preferredYear: number = DEFAULT_YEAR,
+  preferredYear: number = new Date().getFullYear(),
 ): number | undefined {
   if (reportCards.some(card => card.year === preferredYear)) {
     return preferredYear;

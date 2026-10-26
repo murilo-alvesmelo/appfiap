@@ -15,12 +15,21 @@ const card = (year: number): ReportCard => ({
 });
 
 describe('getInitialYear', () => {
-  it('abre em 2025 quando existe', () => {
-    expect(getInitialYear([card(2024), card(2025)])).toBe(2025);
+  it('abre no ano preferido quando existe', () => {
+    expect(getInitialYear([card(2024), card(2025)], 2024)).toBe(2024);
   });
 
-  it('abre no ano mais recente quando não há 2025', () => {
-    expect(getInitialYear([card(2022), card(2024), card(2023)])).toBe(2024);
+  it('abre no ano mais recente quando o preferido não existe', () => {
+    expect(getInitialYear([card(2022), card(2024), card(2023)], 2030)).toBe(
+      2024,
+    );
+  });
+
+  it('usa o ano corrente como preferido por padrão', () => {
+    const currentYear = new Date().getFullYear();
+    expect(
+      getInitialYear([card(currentYear - 1), card(currentYear), card(currentYear + 1)]),
+    ).toBe(currentYear);
   });
 
   it('retorna undefined sem boletins', () => {

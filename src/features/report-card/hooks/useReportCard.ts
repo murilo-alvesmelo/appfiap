@@ -9,7 +9,7 @@ import { formatReportCardLabel, getInitialYear } from '../utils/reportCard';
 
 /**
  * @description Carrega os boletins do aluno e controla o ano selecionado. Ao trocar de aluno,
- * recarrega e volta ao ano inicial (2025, se existir; senão o mais recente).
+ * recarrega e volta ao ano inicial (o ano corrente, se existir; senão o mais recente).
  * @param rm - RM do aluno selecionado (`undefined` quando não há aluno).
  * @returns `reportCards`, `yearOptions` (itens do dropdown, ex.: "7EF - 2025"), `selectedReportCard`,
  * `selectYear`, `isLoading`, `error` e `reload`.

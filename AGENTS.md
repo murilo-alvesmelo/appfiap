@@ -26,7 +26,7 @@ index.js          # registra `App` de src/App.tsx
 src/
   App.tsx         # providers globais + NavigationContainer
   navigation/     # navigators (RootNavigator, AppTabs) + param lists tipadas
-  data/           # responsaveis.json + DTOs, tipos de domínio e mappers compartilhados (ver docs/specs/data-model.md)
+  data/           # responsaveis.json + DTOs, tipos de domínio e mappers compartilhados (ver docs/specs/01-data-model.md)
   features/<x>/   # Um módulo por domínio (auth, ...)
     api/          #   <x>.repository.ts: lê a fonte de dados (JSON) e mapeia DTO -> tipo de domínio
     hooks/        #   useXxx.ts: chama o repository + regras + loading/erro (camada de negócio)
