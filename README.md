@@ -99,3 +99,11 @@ src/
 ```
 
 # Screenshots
+<img width="800" height="1739" alt="Image" src="https://github.com/user-attachments/assets/bd33d925-7411-4e47-8a72-368985e19650" />
+<img height="800" alt="Image" src="https://github.com/user-attachments/assets/aa5a4618-d03a-47db-9f74-ac2bd4cc141c" />
+<img height="800" alt="Image" src="https://github.com/user-attachments/assets/23df21d7-8554-40fb-840e-b2071c13491b" />
+<img height="800" alt="Image" src="https://github.com/user-attachments/assets/ef3b93b3-bcda-4469-b741-d2e91b97213d" />
+<img height="800" alt="Image" src="https://github.com/user-attachments/assets/e4a5c383-1660-4b5b-9bd9-603094eeb32e" />
+<img height="800" alt="Image" src="https://github.com/user-attachments/assets/84d12263-e92b-48b6-80b4-488e28859e65" />
+<img height="800" alt="Image" src="https://github.com/user-attachments/assets/fd35ff1f-750d-439a-8d9c-eddb745bc099" />
+<img height="800" alt="Image" src="https://github.com/user-attachments/assets/2e48bb6a-d54c-4ea7-8f7a-647341975778" />
