@@ -49,5 +49,3 @@ Ver [animations.md](./animations.md#login): entrada do logo/formulário, shake n
 - `src/navigation/RootNavigator.tsx`: `SignIn` ou área logada conforme `isSignedIn`.
 - Persistência: AsyncStorage via `@/lib/storage` (`src/lib/storage.ts`).
 
-## Referência do Figma
-Tela de login: node-id a extrair.

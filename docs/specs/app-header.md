@@ -49,5 +49,3 @@ Ver [animations.md](./animations.md#header): transição dos dados do aluno ao t
 - `src/components/layout/`: `AppHeader.tsx` (props), `AuthenticatedHeader.tsx` (container que lê os providers), `formatStudentDetails.ts`.
 - `src/navigation/AppTabs.tsx`, `navigation.types.ts`.
 
-## Referência do Figma
-Header e tab bar: prints em `PRINT_AULAS/` (o Figma MCP atingiu o limite do plano).

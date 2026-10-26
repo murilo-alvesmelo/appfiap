@@ -130,5 +130,3 @@ A agenda e o boletim **não ficam dentro de `Student`**: são carregados sob dem
 ## Arquivos / camadas envolvidos
 `src/data/*` e os repositories de `auth`, `students`, `lessons` e `report-card`.
 
-## Referência do Figma
-Não se aplica.

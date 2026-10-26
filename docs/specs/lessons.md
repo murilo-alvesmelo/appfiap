@@ -27,7 +27,7 @@ Mostrar as aulas de um dia do aluno selecionado e permitir navegar entre os dias
 
 ## Cenários de erro / vazio
 - **Aluno sem agenda** (`agenda: []`): `StateView` vazio "Agenda indisponível para este aluno", sem seletor de dias.
-- Dia sem aulas: ilustração + "Sem aulas neste dia" no lugar da lista. O dropdown continua navegável. Ilustração: placeholder até exportar o asset do Figma.
+- Dia sem aulas: ilustração + "Sem aulas neste dia" no lugar da lista. O dropdown continua navegável.
 
 ## Animações
 Ver [animations.md](./animations.md#aulas): troca de dia animada e entrada da lista em sequência (stagger).

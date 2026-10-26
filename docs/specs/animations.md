@@ -46,5 +46,3 @@ Toda tela tem animação, deixando o app fluido sem prejudicar a performance.
 ## Fora de escopo
 - Animações Lottie, ilustrações animadas.
 
-## Referência do Figma
-Protótipo/motion do Figma: a extrair, se existir.
