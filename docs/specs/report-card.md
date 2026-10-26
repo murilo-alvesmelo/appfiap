@@ -25,8 +25,8 @@ Mostrar o boletim anual do aluno selecionado: trimestres, disciplinas, notas e f
 - [x] **CA3** Notas e faltas aparecem por disciplina, em cada trimestre avaliado.
 - [x] **CA4** O 2º e o 3º trimestres de 2025 listam as disciplinas com nota e faltas "–".
 - [x] **CA5** **Dado** Bianca (RM 13752), **então** o 1º trimestre mostra 11 disciplinas, sem crash nem linha vazia.
-- [x] **CA6** ⭐ **Dado** Rafael, **quando** escolho 2024, **então** vejo a turma "6EF" e os 3 trimestres avaliados.
-- [x] **CA7** ⭐ **Dado** Joana ou Bianca (só 2025), **então** o seletor de ano não aparece.
+- [x] **CA6**  **Dado** Rafael, **quando** escolho 2024, **então** vejo a turma "6EF" e os 3 trimestres avaliados.
+- [x] **CA7**  **Dado** Joana ou Bianca (só 2025), **então** o seletor de ano não aparece.
 - [x] **CA8** **Quando** troco de aluno, **então** o boletim passa a ser o do novo aluno, em 2025.
 - [x] **CA9** Loading e erro via `StateView`.
 - [x] **CA10** O mapeamento, `isEvaluated`, a formatação de nota e a escolha do ano inicial têm testes.
