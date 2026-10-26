@@ -60,7 +60,7 @@ export function AppHeader({
 
       <AppText variant="bodyLarge" style={styles.centered}>
         Olá,{' '}
-        <AppText variant="bodyLarge" style={styles.bold}>
+        <AppText variant="bodyLargeBold">
           {guardianFirstName.toUpperCase()}
         </AppText>
       </AppText>
@@ -78,8 +78,5 @@ export function AppHeader({
 const styles = StyleSheet.create({
   centered: {
     textAlign: 'center',
-  },
-  bold: {
-    fontWeight: '700',
   },
 });

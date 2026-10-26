@@ -9,6 +9,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Montserrat-Regular.ttf</string>
+		<string>Montserrat-Bold.ttf</string>
 	</array>
 	<key>CFBundleDisplayName</key>
 	<string>appfiap</string>

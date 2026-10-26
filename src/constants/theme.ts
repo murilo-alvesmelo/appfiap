@@ -24,13 +24,10 @@ const breakpoints = {
   xl: 1200,
 } as const;
 
-/**
- * Famílias da Montserrat (fonte do Figma). Só o peso Regular está no projeto;
- * ao adicionar `Montserrat-Medium.ttf`/`Montserrat-Bold.ttf`, troque aqui.
- */
 export const fonts = {
   regular: 'Montserrat-Regular',
   medium: 'Montserrat-Regular',
+  bold: 'Montserrat-Bold',
 } as const;
 
 const textVariants = {
@@ -49,6 +46,7 @@ const textVariants = {
   label: { fontSize: 14, lineHeight: 20, fontWeight: '600' },
   display: { fontFamily: fonts.regular, fontSize: 32, lineHeight: 39 },
   bodyLarge: { fontFamily: fonts.regular, fontSize: 20, lineHeight: 24 },
+  bodyLargeBold: { fontFamily: fonts.bold, fontSize: 20, lineHeight: 24 },
   bodyStrong: { fontFamily: fonts.medium, fontSize: 16, lineHeight: 20 },
   button: { fontFamily: fonts.medium, fontSize: 20, lineHeight: 24 },
 } as const;
