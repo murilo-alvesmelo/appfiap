@@ -7,13 +7,13 @@ export type SectionTitleProps = {
 };
 
 /**
- * Título de seção do Figma ("AGENDA", "BOLETIM"): `primary`, negrito e centralizado.
+ * @description - Título de seção do app, usado em telas como Agenda e Boletim.
  * @param title - Texto exibido (já em maiúsculas).
  */
 export function SectionTitle({ title }: SectionTitleProps) {
   return (
     <AppText
-      variant="bodyLarge"
+      variant="bodyLargeBold"
       color="primary"
       accessibilityRole="header"
       style={styles.title}

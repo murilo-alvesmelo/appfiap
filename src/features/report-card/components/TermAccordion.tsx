@@ -38,7 +38,7 @@ export function TermAccordion({ term }: TermAccordionProps) {
           paddingHorizontal="md"
           style={styles.header}
         >
-          <AppText variant="bodyStrong" color="primary" style={styles.title}>
+          <AppText variant="bodySmallBold" color="primary" style={styles.title}>
             {title}
           </AppText>
           <ExpandChevron isExpanded={isExpanded} />

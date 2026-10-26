@@ -47,6 +47,7 @@ const textVariants = {
   display: { fontFamily: fonts.regular, fontSize: 32, lineHeight: 39 },
   bodyLarge: { fontFamily: fonts.regular, fontSize: 20, lineHeight: 24 },
   bodyLargeBold: { fontFamily: fonts.bold, fontSize: 20, lineHeight: 24 },
+  bodySmallBold: { fontFamily: fonts.bold, fontSize: 14, lineHeight: 18 },
   bodyStrong: { fontFamily: fonts.medium, fontSize: 16, lineHeight: 20 },
   button: { fontFamily: fonts.medium, fontSize: 20, lineHeight: 24 },
 } as const;
