@@ -16,8 +16,13 @@ type AppHeaderProps = {
 };
 
 /**
- * Header da área logada conforme o Figma: logo, ações ("TROCAR PERFIL", "SAIR"),
- * saudação ao responsável e dados do aluno selecionado. Recebe tudo por props.
+ * @description - Cabeçalho do app, exibido em todas as telas. Mostra o logo, nome do responsável, nome e detalhes do aluno selecionado, botão de trocar aluno e botão de sair.
+ * @param guardianFirstName - Primeiro nome do responsável .
+ * @param student - Aluno selecionado.
+ * @param canSwitchStudent - Se o responsável tem mais de um aluno.
+ * @param onSwitchStudent - Callback para trocar o aluno selecionado.
+ * @param onSignOut - Callback para sair da conta.
+ * @param topInset - Espaçamento superior.
  */
 export function AppHeader({
   guardianFirstName,

@@ -8,11 +8,14 @@ type CredentialFieldProps = TextInputProps & {
 };
 
 /**
- * Campo do login no layout do Figma: label centralizado, valor grande
- * centralizado e só uma linha inferior.
+ * @description - Campo de credencial (CPF ou senha) usado na tela de login.
  * @param label - Texto exibido acima do campo (ex.: `CPF`).
  */
-export function CredentialField({ label, style, ...rest }: CredentialFieldProps) {
+export function CredentialField({
+  label,
+  style,
+  ...rest
+}: CredentialFieldProps) {
   const theme = useAppTheme();
 
   return (

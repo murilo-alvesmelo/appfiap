@@ -1,6 +1,5 @@
 import type { ReportCard } from '@/data/school.types';
 
-/** Ano em que o boletim abre por padrão (requisito do teste). */
 export const DEFAULT_YEAR = 2025;
 
 /**
@@ -42,7 +41,7 @@ export function formatAbsences(absences: number | null): string {
 }
 
 /**
- * @description Rótulo do boletim no seletor de ano, com a turma daquele ano.
+ * @description Formata o rótulo do boletim no seletor de ano, com a turma daquele ano.
  * @param reportCard - Boletim (turma e ano).
  * @returns Ex.: `"7EF - 2025"`.
  */
@@ -53,7 +52,7 @@ export function formatReportCardLabel(
 }
 
 /**
- * @description Título do trimestre, como no Figma.
+ * @description formata o título do trimestre, usado no acordeão de disciplinas.
  * @param termNumber - Número do trimestre.
  * @returns Ex.: `"1º TRIMESTRE"`.
  */

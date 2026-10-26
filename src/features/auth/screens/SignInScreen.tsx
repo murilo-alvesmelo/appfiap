@@ -6,7 +6,6 @@ import { Box, Logo, Screen } from '@/components/ui';
 import { SignInForm } from '../components/SignInForm';
 import { useSignIn } from '../hooks/useSignIn';
 
-/** Tela de login (CPF + senha) conforme o Figma. */
 export function SignInScreen() {
   const { submit, errorMessage, isLoading } = useSignIn();
   const insets = useSafeAreaInsets();

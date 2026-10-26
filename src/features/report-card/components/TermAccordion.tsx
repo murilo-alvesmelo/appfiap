@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Pressable, StyleSheet } from 'react-native';
-import Animated, { FadeIn, FadeOut } from 'react-native-reanimated';
+import Animated, { FadeOut } from 'react-native-reanimated';
 
 import { AppText, Box, ExpandChevron } from '@/components/ui';
 import type { Term } from '@/data/school.types';
@@ -47,21 +47,13 @@ export function TermAccordion({ term }: TermAccordionProps) {
 
       {isExpanded && (
         <Animated.View exiting={FadeOut.duration(150)}>
-          {term.isEvaluated ? (
-            term.subjects.map((subject, index) => (
-              <SubjectGradeRow
-                key={subject.name}
-                subject={subject}
-                index={index}
-              />
-            ))
-          ) : (
-            <Animated.View entering={FadeIn.duration(250)}>
-              <Box paddingHorizontal="sm" paddingVertical="sm">
-                <AppText color="textMuted">Não avaliado</AppText>
-              </Box>
-            </Animated.View>
-          )}
+          {term.subjects.map((subject, index) => (
+            <SubjectGradeRow
+              key={subject.name}
+              subject={subject}
+              index={index}
+            />
+          ))}
         </Animated.View>
       )}
     </Box>

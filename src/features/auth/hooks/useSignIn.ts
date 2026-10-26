@@ -12,7 +12,6 @@ const INVALID_CREDENTIALS_MESSAGE =
 
 /**
  * @description - Orquestra o login: valida as credenciais, chama o repository e salva a sessão.
- * Qualquer falha (validação ou autenticação) vira a mesma mensagem única do Figma.
  *
  * @returns `submit` para enviar o formulário, erros por campo, `isLoading` e `errorMessage`.
  */

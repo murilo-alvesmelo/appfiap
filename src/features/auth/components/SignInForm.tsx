@@ -17,8 +17,11 @@ type SignInFormProps = {
 };
 
 /**
- * Formulário de login (CPF + senha) no layout do Figma.
- * Guarda só o estado dos campos; o resto vem por props.
+ * @description - Formulário de login: campos de CPF e senha, botão de enviar e mensagem de erro.
+ * @param onSubmit - Callback chamado ao enviar o formulário.
+ * @param errorMessage - Mensagem de erro exibida abaixo dos campos.
+ * @param isLoading - Se o formulário está em estado de carregamento (desabilita o botão).
+ * @param bottomInset - Inset inferior da safe area, repassado à barra do botão.
  */
 export function SignInForm({
   onSubmit,

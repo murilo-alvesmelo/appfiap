@@ -46,7 +46,6 @@ Os cenários de erro transversais estão nas specs dos fluxos afetados:
 ## Animações
 ## Fora de escopo
 ## Arquivos / camadas envolvidos
-## Referência do Figma
 ```
 
 ## Rastreabilidade (teste técnico → spec)
@@ -75,9 +74,3 @@ Os cenários de erro transversais estão nas specs dos fluxos afetados:
 | Todas as telas com animação, sem prejudicar a performance | animations |
 | Funcionar em iOS e Android | animations (CA-T2) + ROADMAP fase 9 |
 
-## Figma
-
-Arquivo: https://www.figma.com/design/lWgkJr0vc9ZiQQylY2J4Zt/Teste-T%C3%A9cnico-Mobile---FIAP?node-id=4001-2
-
-Os node-ids de cada tela ainda **estão por extrair** (item da Fase 0 do ROADMAP).
-Quando forem extraídos, preencha a seção "Referência do Figma" de cada spec.
