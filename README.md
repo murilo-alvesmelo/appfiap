@@ -52,13 +52,8 @@ O estado usa só React (`useState`/`useReducer`/Context).
 
    Rode `pod install` de novo sempre que atualizar dependências nativas.
 
-3. Inicie o Metro:
 
-   ```sh
-   yarn start
-   ```
-
-4. Em outro terminal, rode o app:
+3. Rode o app:
 
    ```sh
    yarn android   # Android
