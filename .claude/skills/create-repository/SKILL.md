@@ -5,7 +5,7 @@ description: Adiciona um novo dado/consulta a uma feature a partir da fonte loca
 
 # Novo dado (repository + hook)
 
-Leia antes: `docs/data-fetching.md`, `docs/specs/data-model.md` e a spec do fluxo em `docs/specs/`.
+Leia antes: `docs/data-fetching.md`, `docs/specs/01-data-model.md` e a spec do fluxo em `docs/specs/`.
 
 ## Passos
 
@@ -15,7 +15,7 @@ Leia antes: `docs/data-fetching.md`, `docs/specs/data-model.md` e a spec do flux
    - `features/<x>/types/<x>.types.ts`: só tipos **próprios da feature** (ex.: input de ação como `SignInCredentials`, erros de campo)
 
 2. **Mapper** puro em `src/data/school.mappers.ts` (`toXxx`), com teste em `school.mappers.test.ts`.
-   Siga as regras de `docs/specs/data-model.md` (`null` = não avaliado, `horario` → `startTime`/`endTime` etc.).
+   Siga as regras de `docs/specs/01-data-model.md` (`null` = não avaliado, `horario` → `time` sem transformação etc.).
 
 3. **Repository** em `features/<x>/api/<x>.repository.ts`: adicione o método async no objeto existente:
 

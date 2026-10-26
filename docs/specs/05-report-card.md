@@ -8,33 +8,36 @@ Mostrar o boletim anual do aluno selecionado: trimestres, disciplinas, notas e f
 - Apresentar o ano, a turma e os trimestres, com as disciplinas, notas gerais e faltas.
 - **Bônus:** navegar entre anos anteriores, quando houver dados.
 
+> O requisito cita 2025 e "só o 1º trimestre avaliado" porque são os dados do JSON entregue. A implementação não fixa o ano nem quais trimestres estão avaliados: isso vem dos dados (regras 2 e 4).
+
 ## Regras de negócio
 1. O boletim vem do repository de `report-card`, pelo RM e pelo ano.
-2. Ano inicial: **2025**. Se o aluno não tiver 2025, abrir no ano mais recente disponível.
-3. A turma exibida é a **do boletim** daquele ano (ex.: Rafael em 2024 = 6EF, em 2025 = 7EF), e não a turma atual do aluno.
-4. Trimestre avaliado: `isEvaluated` (ver [data-model.md](./data-model.md#regras-de-negócio)). Trimestres não avaliados listam as disciplinas normalmente, com nota e faltas "–".
+2. Ano inicial: o **ano corrente** (data do dispositivo), se existir no boletim do aluno. Se não existir, o **ano mais recente disponível**. Essa regra é uma função pura testada.
+3. A turma exibida é a **do boletim** daquele ano, e não a turma atual do aluno (as duas podem ser diferentes).
+4. Trimestre avaliado: `isEvaluated` (ver [01-data-model.md](./01-data-model.md#regras-de-negócio)). Trimestres não avaliados listam as disciplinas normalmente, com nota e faltas "–".
 5. Uma disciplina com `grade`/`absences` `null` mostra "–", em qualquer trimestre.
-6. Cada trimestre mostra **as disciplinas que ele tem**. A lista pode variar entre trimestres (RM 13752: o 1º tem 11 disciplinas, sem "Arte").
-7. Nota exibida com uma casa decimal e vírgula (`9,5`, `8,0`), formatada por função pura.
+6. Cada trimestre mostra **as disciplinas que ele tem**. A quantidade e os nomes podem variar entre trimestres.
+7. Nota exibida com uma casa decimal e vírgula (ex.: `9,5`, `8,0`), formatada por função pura.
 8. Seletor de ano visível só quando há mais de um ano. Anos em ordem decrescente.
 9. Ao trocar de aluno, o boletim recarrega no ano inicial.
+10. A quantidade de trimestres não é fixa: a tela mostra os que vierem da fonte, em ordem.
 
 ## Critérios de aceite
-- [x] **CA1** **Dado** Rafael, **quando** abro Boletim, **então** vejo "2025" e a turma "7EF".
-- [x] **CA2** O 1º trimestre lista as 12 disciplinas com nota e faltas (ex.: Língua Portuguesa · 9,5 · 0 faltas).
+- [x] **CA1** **Dado** um aluno com boletim, **quando** abro Boletim, **então** vejo o ano inicial (regra 2) e a turma daquele boletim.
+- [x] **CA2** **Dado** um trimestre avaliado, **então** ele lista todas as suas disciplinas com nota e faltas (ex.: `Língua Portuguesa · 9,5 · 0 faltas`).
 - [x] **CA3** Notas e faltas aparecem por disciplina, em cada trimestre avaliado.
-- [x] **CA4** O 2º e o 3º trimestres de 2025 listam as disciplinas com nota e faltas "–".
-- [x] **CA5** **Dado** Bianca (RM 13752), **então** o 1º trimestre mostra 11 disciplinas, sem crash nem linha vazia.
-- [x] **CA6**  **Dado** Rafael, **quando** escolho 2024, **então** vejo a turma "6EF" e os 3 trimestres avaliados.
-- [x] **CA7**  **Dado** Joana ou Bianca (só 2025), **então** o seletor de ano não aparece.
-- [x] **CA8** **Quando** troco de aluno, **então** o boletim passa a ser o do novo aluno, em 2025.
+- [x] **CA4** **Dado** um trimestre não avaliado, **então** ele lista as disciplinas com nota e faltas "–".
+- [x] **CA5** **Dado** trimestres com quantidades diferentes de disciplinas, **então** cada um mostra só as suas, sem crash nem linha vazia.
+- [x] **CA6** **Dado** um aluno com boletim de mais de um ano, **quando** escolho outro ano, **então** vejo a turma e os trimestres daquele ano.
+- [x] **CA7** **Dado** um aluno com boletim de um ano só, **então** o seletor de ano não aparece.
+- [x] **CA8** **Quando** troco de aluno, **então** o boletim passa a ser o do novo aluno, no ano inicial dele.
 - [x] **CA9** Loading e erro via `StateView`.
 - [x] **CA10** O mapeamento, `isEvaluated`, a formatação de nota e a escolha do ano inicial têm testes.
 
 ## Cenários de erro / vazio
 - **Aluno sem boletim** (`boletim: []`): `StateView` vazio "Boletim indisponível para este aluno".
 - Ano pedido que não existe: o repository lança `Error("Boletim não encontrado")`, e o hook expõe o erro.
-
+- Boletim sem trimestres, ou trimestre sem disciplinas: a tela não quebra.
 
 ## Fora de escopo
 - Média anual calculada, frequência percentual, exportar PDF.

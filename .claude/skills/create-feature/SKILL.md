@@ -5,7 +5,7 @@ description: Cria uma nova feature completa em src/features/<nome> (tipos/mapper
 
 # Criar feature
 
-Leia antes: a spec do fluxo em `docs/specs/`, `AGENTS.md`, `docs/architecture.md`, `docs/data-fetching.md`, `docs/specs/data-model.md`, `docs/navigation.md`.
+Leia antes: a spec do fluxo em `docs/specs/`, `AGENTS.md`, `docs/architecture.md`, `docs/data-fetching.md`, `docs/specs/01-data-model.md`, `docs/navigation.md`.
 Modelos a copiar: `src/features/auth/` (formulário/ação), `src/features/lessons/` (tela simples) e o exemplo de leitura em `docs/data-fetching.md`.
 
 ## Entradas a confirmar
@@ -17,7 +17,7 @@ Modelos a copiar: `src/features/auth/` (formulário/ação), `src/features/lesso
 
 ## Passos
 
-1. **Tipos e mapper** (dados do `responsaveis.json`): no módulo compartilhado `src/data/`, seguindo `docs/specs/data-model.md`
+1. **Tipos e mapper** (dados do `responsaveis.json`): no módulo compartilhado `src/data/`, seguindo `docs/specs/01-data-model.md`
    - `school.dto.ts`: DTO exatamente como no JSON (ex.: `LessonDTO = { horario: string; disciplina: string }`)
    - `school.types.ts`: tipo de domínio em camelCase e em inglês (ex.: `Lesson = { startTime: string; endTime: string; subject: string }`)
    - `school.mappers.ts`: `toXxx` puro + teste em `school.mappers.test.ts`

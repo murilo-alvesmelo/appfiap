@@ -24,14 +24,14 @@ Incluir, no rodapé, a navegação entre **aulas** e **boletim**.
 
 
 ## Critérios de aceite
-- [x] **CA1** **Dado** que entrei como Gustavo, **então** o header mostra "Olá, GUSTAVO".
-- [x] **CA2** **Dado** Rafael selecionado, **então** o header mostra "RAFAEL" e "7EF - RM 12567 - Matutino".
-- [ ] **CA3** **Dado** Gustavo (2 alunos), **então** "TROCAR PERFIL" aparece e abre a seleção.
-- [x] **CA4** **Dado** Adelaide (1 aluna), **então** "TROCAR PERFIL" **não** aparece.
+- [x] **CA1** **Dado** um responsável logado, **então** o header mostra "Olá, <PRIMEIRO NOME>" em caixa alta.
+- [x] **CA2** **Dado** um aluno selecionado, **então** o header mostra o primeiro nome dele em caixa alta e `<turma> - RM <rm> - <período>`, com os valores como vêm da fonte.
+- [x] **CA3** **Dado** um responsável com 2 ou mais alunos, **então** "TROCAR PERFIL" aparece e abre a seleção.
+- [x] **CA4** **Dado** um responsável com 1 aluno, **então** "TROCAR PERFIL" **não** aparece.
 - [x] **CA5** **Quando** toco em "SAIR", **então** volto ao login, e ao reabrir o app continuo no login.
 - [x] **CA6** O header aparece em **Agenda** e em **Boletim**.
 - [x] **CA7** O rodapé tem as tabs **Agenda** e **Boletim**, e **Agenda** é a inicial.
-- [ ] **CA8** **Quando** troco de aluno, **então** o header, Agenda e Boletim refletem o novo aluno.
+- [x] **CA8** **Quando** troco de aluno, **então** o header, Agenda e Boletim refletem o novo aluno.
 
 ## Cenários de erro / vazio
 - **Responsável sem alunos**: o app não quebra. Mostra um `StateView` vazio ("Nenhum aluno vinculado a este responsável") com o botão de logout disponível. O header exibe só o nome do responsável.
