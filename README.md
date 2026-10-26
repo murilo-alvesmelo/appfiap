@@ -99,7 +99,6 @@ src/
 ```
 
 # Screenshots
-<img width="800" height="1739" alt="Image" src="https://github.com/user-attachments/assets/bd33d925-7411-4e47-8a72-368985e19650" />
 <img height="800" alt="Image" src="https://github.com/user-attachments/assets/aa5a4618-d03a-47db-9f74-ac2bd4cc141c" />
 <img height="800" alt="Image" src="https://github.com/user-attachments/assets/23df21d7-8554-40fb-840e-b2071c13491b" />
 <img height="800" alt="Image" src="https://github.com/user-attachments/assets/ef3b93b3-bcda-4469-b741-d2e91b97213d" />
