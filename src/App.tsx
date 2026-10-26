@@ -5,6 +5,7 @@ import {
   type Theme,
 } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import BootSplash from 'react-native-bootsplash';
 
 import { darkTheme, lightTheme } from '@/constants/theme';
 import { restoreGuardian } from '@/features/auth';
@@ -22,7 +23,10 @@ export function App() {
       <AppThemeProvider>
         <SessionProvider resolveGuardian={restoreGuardian}>
           <SelectedStudentProvider>
-            <NavigationContainer theme={useNavigationTheme()}>
+            <NavigationContainer
+              theme={useNavigationTheme()}
+              onReady={() => BootSplash.hide({ fade: true })}
+            >
               <RootNavigator />
             </NavigationContainer>
           </SelectedStudentProvider>

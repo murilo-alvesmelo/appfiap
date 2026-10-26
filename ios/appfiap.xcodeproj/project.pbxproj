@@ -15,6 +15,8 @@
 		A1F0C0DE00000000000F0002 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1F0C0DE00000000000F0001 /* Montserrat-Regular.ttf */; };
 		A1F0C0DE00000000000F0004 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1F0C0DE00000000000F0003 /* Montserrat-Bold.ttf */; };
 		BF58B706A0840EF6A31AF718 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
+		6A73449138F8427696DC42EF /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F58896454BBF42EA9C997198 /* BootSplash.storyboard */; };
+		1A3CC77CE47140A2B7D24736 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDB349A1B0DE496187C5FA55 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		A1F0C0DE00000000000F0001 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../src/assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		A1F0C0DE00000000000F0003 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "../src/assets/fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F58896454BBF42EA9C997198 /* BootSplash.storyboard */ = {isa = PBXFileReference; name = "BootSplash.storyboard"; path = "appfiap/BootSplash.storyboard"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CDB349A1B0DE496187C5FA55 /* Colors.xcassets */ = {isa = PBXFileReference; name = "Colors.xcassets"; path = "appfiap/Colors.xcassets"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = folder.assetcatalog; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
 				A1F0C0DE00000000000F0001 /* Montserrat-Regular.ttf */,
 				A1F0C0DE00000000000F0003 /* Montserrat-Bold.ttf */,
+				F58896454BBF42EA9C997198 /* BootSplash.storyboard */,
+				CDB349A1B0DE496187C5FA55 /* Colors.xcassets */,
 			);
 			name = appfiap;
 			sourceTree = "<group>";
@@ -172,6 +178,8 @@
 				BF58B706A0840EF6A31AF718 /* PrivacyInfo.xcprivacy in Resources */,
 				A1F0C0DE00000000000F0002 /* Montserrat-Regular.ttf in Resources */,
 				A1F0C0DE00000000000F0004 /* Montserrat-Bold.ttf in Resources */,
+				6A73449138F8427696DC42EF /* BootSplash.storyboard in Resources */,
+				1A3CC77CE47140A2B7D24736 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
