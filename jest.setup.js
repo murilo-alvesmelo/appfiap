@@ -14,3 +14,12 @@ jest.mock('react-native-worklets', () =>
 jest.mock('react-native-reanimated', () =>
   require('react-native-reanimated/mock'),
 );
+
+jest.mock('react-native-bootsplash', () => ({
+  __esModule: true,
+  default: {
+    hide: jest.fn().mockResolvedValue(undefined),
+    isVisible: jest.fn().mockReturnValue(false),
+    useHideAnimation: jest.fn().mockReturnValue({ container: {}, logo: {}, brand: {} }),
+  },
+}));
