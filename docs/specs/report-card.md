@@ -12,18 +12,18 @@ Mostrar o boletim anual do aluno selecionado: trimestres, disciplinas, notas e f
 1. O boletim vem do repository de `report-card`, pelo RM e pelo ano.
 2. Ano inicial: **2025**. Se o aluno não tiver 2025, abrir no ano mais recente disponível.
 3. A turma exibida é a **do boletim** daquele ano (ex.: Rafael em 2024 = 6EF, em 2025 = 7EF), e não a turma atual do aluno.
-4. Trimestre avaliado: `isEvaluated` (ver [data-model.md](./data-model.md#regras-de-negócio)). Trimestres não avaliados mostram o estado **"Não avaliado"** em vez de notas.
-5. Uma disciplina com `grade: null` dentro de um trimestre avaliado mostra "–" (nunca `0`).
+4. Trimestre avaliado: `isEvaluated` (ver [data-model.md](./data-model.md#regras-de-negócio)). Trimestres não avaliados listam as disciplinas normalmente, com nota e faltas "–".
+5. Uma disciplina com `grade`/`absences` `null` mostra "–", em qualquer trimestre.
 6. Cada trimestre mostra **as disciplinas que ele tem**. A lista pode variar entre trimestres (RM 13752: o 1º tem 11 disciplinas, sem "Arte").
 7. Nota exibida com uma casa decimal e vírgula (`9,5`, `8,0`), formatada por função pura.
-8. ⭐ Seletor de ano visível só quando há mais de um ano. Anos em ordem decrescente.
+8. Seletor de ano visível só quando há mais de um ano. Anos em ordem decrescente.
 9. Ao trocar de aluno, o boletim recarrega no ano inicial.
 
 ## Critérios de aceite
 - [x] **CA1** **Dado** Rafael, **quando** abro Boletim, **então** vejo "2025" e a turma "7EF".
 - [x] **CA2** O 1º trimestre lista as 12 disciplinas com nota e faltas (ex.: Língua Portuguesa · 9,5 · 0 faltas).
 - [x] **CA3** Notas e faltas aparecem por disciplina, em cada trimestre avaliado.
-- [x] **CA4** O 2º e o 3º trimestres de 2025 aparecem como "Não avaliado".
+- [x] **CA4** O 2º e o 3º trimestres de 2025 listam as disciplinas com nota e faltas "–".
 - [x] **CA5** **Dado** Bianca (RM 13752), **então** o 1º trimestre mostra 11 disciplinas, sem crash nem linha vazia.
 - [x] **CA6** ⭐ **Dado** Rafael, **quando** escolho 2024, **então** vejo a turma "6EF" e os 3 trimestres avaliados.
 - [x] **CA7** ⭐ **Dado** Joana ou Bianca (só 2025), **então** o seletor de ano não aparece.
