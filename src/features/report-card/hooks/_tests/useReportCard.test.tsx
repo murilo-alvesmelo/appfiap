@@ -2,7 +2,7 @@ import ReactTestRenderer from 'react-test-renderer';
 
 import { logger } from '@/lib/logger';
 
-import { useReportCard } from './useReportCard';
+import { useReportCard } from '../useReportCard';
 
 async function renderReportCard(rm: number | undefined) {
   const current: { reportCard?: ReturnType<typeof useReportCard> } = {};

@@ -2,7 +2,7 @@ import ReactTestRenderer from 'react-test-renderer';
 
 import { useSelectedStudent } from '@/providers/selected-student';
 
-import { useStudentPicker } from './useStudentPicker';
+import { useStudentPicker } from '../useStudentPicker';
 
 jest.mock('@/providers/selected-student', () => ({
   useSelectedStudent: jest.fn(),

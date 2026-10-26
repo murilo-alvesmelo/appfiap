@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { AppText, Box, Logo } from '@/components/ui';
 import type { Student } from '@/data/school.types';
 
-import { formatStudentDetails } from './formatStudentDetails';
+import { formatStudentDetails } from '../../utils/formatStudentDetails';
 import { HeaderAction } from './HeaderAction';
 
 type AppHeaderProps = {

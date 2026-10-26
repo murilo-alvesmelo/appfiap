@@ -1,5 +1,5 @@
-import guardiansData from './responsaveis.json';
-import type { GuardianDTO, StudentDTO } from './school.dto';
+import guardiansData from '../responsaveis.json';
+import type { GuardianDTO, StudentDTO } from '../school.dto';
 import {
   toDaySchedule,
   toGuardian,
@@ -8,7 +8,7 @@ import {
   toStudent,
   toSubjectGrade,
   toTerm,
-} from './school.mappers';
+} from '../school.mappers';
 
 const guardians: GuardianDTO[] = guardiansData;
 

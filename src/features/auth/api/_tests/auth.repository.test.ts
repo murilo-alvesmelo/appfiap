@@ -1,4 +1,4 @@
-import { authRepository } from './auth.repository';
+import { authRepository } from '../auth.repository';
 
 describe('authRepository.signIn', () => {
   it.each([

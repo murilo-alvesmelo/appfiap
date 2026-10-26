@@ -5,8 +5,7 @@ import { logger } from './logger';
 const asyncStorage = createAsyncStorage('appfiap');
 
 /**
- * @description Persistência local (AsyncStorage) com valores serializados em JSON.
- * Único ponto do app que importa o AsyncStorage. As chaves ficam com quem usa.
+ * @description Persistência local com valores serializados em JSON.
  */
 export const storage = {
   /**

@@ -3,11 +3,10 @@ import ReactTestRenderer from 'react-test-renderer';
 
 import type { Guardian } from '@/data/school.types';
 import { SessionProvider, useSession } from '@/providers/session';
-
 import {
   SelectedStudentProvider,
   useSelectedStudent,
-} from './SelectedStudentProvider';
+} from '../SelectedStudentProvider';
 
 const rawStorage = createAsyncStorage('appfiap');
 

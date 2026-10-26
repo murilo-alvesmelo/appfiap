@@ -2,7 +2,7 @@ import ReactTestRenderer from 'react-test-renderer';
 
 import { logger } from '@/lib/logger';
 
-import { useLessons } from './useLessons';
+import { useLessons } from '../useLessons';
 
 const OUTSIDE_SCHEDULE = '2026-10-25';
 

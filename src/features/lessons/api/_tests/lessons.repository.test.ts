@@ -1,4 +1,4 @@
-import { lessonsRepository } from './lessons.repository';
+import { lessonsRepository } from '../lessons.repository';
 
 describe('lessonsRepository.getScheduleByRm', () => {
   it('retorna a agenda ordenada do aluno', async () => {

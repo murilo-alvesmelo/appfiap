@@ -1,6 +1,6 @@
 import type { DaySchedule } from '@/data/school.types';
 
-import { formatDayLabel, getInitialDate, toIsoDate } from './schedule';
+import { formatDayLabel, getInitialDate, toIsoDate } from '../schedule';
 
 const lesson = { time: '07:15 - 08:00', subject: 'Matemática I' };
 

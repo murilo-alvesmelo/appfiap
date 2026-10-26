@@ -1,4 +1,4 @@
-import { reportCardRepository } from './report-card.repository';
+import { reportCardRepository } from '../report-card.repository';
 
 describe('reportCardRepository.getReportCardsByRm', () => {
   it('retorna os boletins do mais recente para o mais antigo', async () => {

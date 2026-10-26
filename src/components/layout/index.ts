@@ -1,2 +1,2 @@
 export { AuthenticatedHeader } from './AuthenticatedHeader';
-export { formatStudentDetails } from './formatStudentDetails';
+export { formatStudentDetails } from '../../utils/formatStudentDetails';

@@ -4,7 +4,7 @@ import ReactTestRenderer from 'react-test-renderer';
 import type { Guardian } from '@/data/school.types';
 import { logger } from '@/lib/logger';
 
-import { SessionProvider, useSession } from './SessionProvider';
+import { SessionProvider, useSession } from '../SessionProvider';
 
 const rawStorage = createAsyncStorage('appfiap');
 

@@ -4,8 +4,8 @@ import ReactTestRenderer from 'react-test-renderer';
 import { logger } from '@/lib/logger';
 import { SessionProvider, useSession } from '@/providers/session';
 
-import { authRepository } from '../api/auth.repository';
-import { useSignIn } from './useSignIn';
+import { authRepository } from '../../api/auth.repository';
+import { useSignIn } from '../useSignIn';
 
 async function renderSignIn() {
   const current: {

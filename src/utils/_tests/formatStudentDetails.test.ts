@@ -1,4 +1,4 @@
-import { formatStudentDetails } from './formatStudentDetails';
+import { formatStudentDetails } from '../formatStudentDetails';
 
 describe('formatStudentDetails', () => {
   it('formata turma, RM e período', () => {

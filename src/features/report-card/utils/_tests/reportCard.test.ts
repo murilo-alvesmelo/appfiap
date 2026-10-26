@@ -6,7 +6,7 @@ import {
   formatReportCardLabel,
   formatTermTitle,
   getInitialYear,
-} from './reportCard';
+} from '../reportCard';
 
 const card = (year: number): ReportCard => ({
   year,

@@ -1,4 +1,4 @@
-import { formatCpf, isCpfComplete, onlyDigits } from './cpf';
+import { formatCpf, isCpfComplete, onlyDigits } from '../cpf';
 
 describe('formatCpf', () => {
   it.each([
