@@ -24,7 +24,6 @@ Mudou o requisito? Atualize a spec **primeiro**, no mesmo commit da mudança de 
 | [lessons.md](./lessons.md) | Aulas do dia | 4 |
 | [report-card.md](./report-card.md) | Boletim | 5 |
 | [student-picker.md](./student-picker.md) | Seleção de aluno | 6 |
-| [animations.md](./animations.md) | Animações (transversal) | 7 |
 
 Os cenários de erro transversais estão nas specs dos fluxos afetados:
 - Responsável sem alunos: [app-header.md](./app-header.md#cenários-de-erro--vazio)
@@ -43,7 +42,6 @@ Os cenários de erro transversais estão nas specs dos fluxos afetados:
 ## Critérios de aceite
 - [ ] **Dado** ..., **quando** ..., **então** ...
 ## Cenários de erro / vazio
-## Animações
 ## Fora de escopo
 ## Arquivos / camadas envolvidos
 ```
@@ -71,6 +69,4 @@ Os cenários de erro transversais estão nas specs dos fluxos afetados:
 | Seleção: nome completo, RM e turma | student-picker (CA2) |
 | Seleção: voltar à tela anterior | student-picker (CA4) |
 | Seleção fora do rodapé | student-picker (CA5) |
-| Todas as telas com animação, sem prejudicar a performance | animations |
-| Funcionar em iOS e Android | animations (CA-T2) + ROADMAP fase 9 |
 

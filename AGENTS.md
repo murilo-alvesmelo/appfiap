@@ -12,7 +12,7 @@ Requisitos do produto: `teste-tecnico-mobile.md`.
 - Estilo: **Restyle** (`@shopify/restyle`): `Box`/`AppText` com props de tokens e `useAppTheme()`; temas light/dark em `src/constants/theme.ts`. Ver `docs/styling.md`
 - Dados: **JSON local** lido pelos repositories das features (sem HTTP). Ver `docs/data-fetching.md`
 - Estado: React puro: `useState`/`useReducer`, Context em `src/providers/`
-- Animação: **Reanimated 4** (`react-native-reanimated` + `react-native-worklets`). Ver `docs/animations.md`
+- Animação: **Reanimated 4** (`react-native-reanimated` + `react-native-worklets`).
 - Persistência: **AsyncStorage**, usado **só** via `@/lib/storage` (nunca importe o AsyncStorage direto)
 - Gerenciador de pacotes: **yarn**
 
@@ -104,7 +104,6 @@ Para tarefas recorrentes, siga a receita em `.claude/skills/<nome>/SKILL.md`:
 - `docs/state.md`: estado local vs. feature vs. global
 - `docs/navigation.md`: React Navigation, param lists, fluxo de autenticação
 - `docs/styling.md`: Restyle, temas/tokens e componentes de UI
-- `docs/animations.md`: Reanimated, padrões e regras de performance
 - `docs/conventions.md`: nomes, imports, TS
 
 ## Antes de concluir qualquer tarefa

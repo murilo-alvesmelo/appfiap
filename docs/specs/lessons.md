@@ -29,8 +29,6 @@ Mostrar as aulas de um dia do aluno selecionado e permitir navegar entre os dias
 - **Aluno sem agenda** (`agenda: []`): `StateView` vazio "Agenda indisponível para este aluno", sem seletor de dias.
 - Dia sem aulas: ilustração + "Sem aulas neste dia" no lugar da lista. O dropdown continua navegável.
 
-## Animações
-Ver [animations.md](./animations.md#aulas): troca de dia animada e entrada da lista em sequência (stagger).
 
 ## Fora de escopo
 - Calendário mensal, semanas anteriores/próximas (os dados só têm uma semana).

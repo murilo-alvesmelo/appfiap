@@ -36,8 +36,6 @@ Incluir, no rodapé, a navegação entre **aulas** e **boletim**.
 ## Cenários de erro / vazio
 - **Responsável sem alunos**: o app não quebra. Mostra um `StateView` vazio ("Nenhum aluno vinculado a este responsável") com o botão de logout disponível. O header exibe só o nome do responsável.
 
-## Animações
-Ver [animations.md](./animations.md#header): transição dos dados do aluno ao trocar e transição entre as tabs.
 
 ## Fora de escopo
 - Mais tabs além de Aulas e Boletim.

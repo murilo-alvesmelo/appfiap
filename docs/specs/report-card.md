@@ -35,8 +35,6 @@ Mostrar o boletim anual do aluno selecionado: trimestres, disciplinas, notas e f
 - **Aluno sem boletim** (`boletim: []`): `StateView` vazio "Boletim indisponível para este aluno".
 - Ano pedido que não existe: o repository lança `Error("Boletim não encontrado")`, e o hook expõe o erro.
 
-## Animações
-Ver [animations.md](./animations.md#boletim): troca de ano/trimestre e entrada dos itens.
 
 ## Fora de escopo
 - Média anual calculada, frequência percentual, exportar PDF.

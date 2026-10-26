@@ -36,8 +36,6 @@ Autenticar o responsável com CPF e senha do JSON e manter a sessão entre abert
 - **Sessão persistida inválida** (o id não existe mais no JSON ou o dado está corrompido): limpar o storage e mostrar o login, sem crash.
 - Falha ao ler o storage no boot: logar via `logger` e seguir para o login.
 
-## Animações
-Ver [animations.md](./animations.md#login): entrada do logo/formulário, shake na mensagem de erro e loading no botão.
 
 ## Fora de escopo
 - Recuperação de senha, cadastro, biometria.

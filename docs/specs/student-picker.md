@@ -28,8 +28,6 @@ Permitir que o responsável com mais de um aluno escolha qual deles acompanhar.
 ## Cenários de erro / vazio
 - Lista vazia (responsável sem alunos): a tela não é acessível (ver app-header). Se for aberta assim mesmo, mostra `StateView` vazio.
 
-## Animações
-Ver [animations.md](./animations.md#seleção-de-aluno): entrada da lista e feedback de toque.
 
 ## Fora de escopo
 - Busca/filtro de alunos, foto do aluno.
